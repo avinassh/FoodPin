@@ -79,10 +79,10 @@
 			children = (
 				828233D11A8C54E6005D1D72 /* AppDelegate.swift */,
 				828233D51A8C54E6005D1D72 /* Main.storyboard */,
+				828233F11A8C56BD005D1D72 /* RestaurantTableViewController.swift */,
 				828233D81A8C54E6005D1D72 /* Images.xcassets */,
 				828233DA1A8C54E6005D1D72 /* LaunchScreen.xib */,
 				828233CF1A8C54E6005D1D72 /* Supporting Files */,
-				828233F11A8C56BD005D1D72 /* RestaurantTableViewController.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -407,6 +407,7 @@
 				828233ED1A8C54E6005D1D72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		828233EE1A8C54E6005D1D72 /* Build configuration list for PBXNativeTarget "FoodPinTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +416,7 @@
 				828233F01A8C54E6005D1D72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -17,6 +17,8 @@ class RestaurantTableViewController: UITableViewController {
         "Five Leaves", "Cafe Lore", "Confessional", "Barrafina",
         "Donostia", "Royal Oak", "CASK Pub and Kitchen"]
     
+    var restaurantImages = ["1", "2", "3", "4", "5", "6", "7", "8"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,8 +52,15 @@ class RestaurantTableViewController: UITableViewController {
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as UITableViewCell
         cell.textLabel.text = restaurantNames[indexPath.row]
-        cell.imageView.image = UIImage(named: "restaurant")
+        // as of now this code displays random images. should be edited to 
+        // display proper image for each restaurant
+        let randomImageIndex = Int(arc4random_uniform(UInt32(restaurantImages.count)))
+        cell.imageView.image = UIImage(named: restaurantImages[randomImageIndex])
         return cell
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 
     /*
