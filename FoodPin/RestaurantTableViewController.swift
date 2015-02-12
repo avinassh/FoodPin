@@ -10,6 +10,13 @@ import UIKit
 
 class RestaurantTableViewController: UITableViewController {
 
+    var restaurantNames = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl",
+        "Petite Oyster", "For Kee Restaurant", "Po's Atelier",
+        "Bourke Street Bakery", "Haigh’s Chocolate", "Palomino Espresso",
+        "Upstate", "Traif", "Graham Avenue Meats And Deli", "Waffle & Wolf",
+        "Five Leaves", "Cafe Lore", "Confessional", "Barrafina",
+        "Donostia", "Royal Oak", "CASK Pub and Kitchen"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,13 +37,20 @@ class RestaurantTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return restaurantNames.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cellIdentifier = "Cell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as UITableViewCell
+        cell.textLabel.text = restaurantNames[indexPath.row]
+        return cell
     }
 
     /*
