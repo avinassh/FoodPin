@@ -29,6 +29,10 @@ class RestaurantTableViewController: UITableViewController {
         "Cafe", "American / Seafood", "American", "American", "Breakfast & Brunch",
         "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish",
         "Spanish", "British", "Thai"]
+  
+// following fails :-/
+//    var restaurantIsVisted = [Bool](count: restaurantNames.count, repeatedValues: false)
+    var restaurantIsVisited = [Bool](count: 21, repeatedValue: false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +79,15 @@ class RestaurantTableViewController: UITableViewController {
         cell.restaurantTypeLabel.text = restaurantTypes[indexPath.row]
         cell.restaurantLocationLabel.text = restaurantLocations[indexPath.row]
         
+        if restaurantIsVisited[indexPath.row] {
+            cell.accessoryType = .Checkmark
+        } else {
+            cell.accessoryType = .None
+        }
+        
+        // alternative in ternery code
+        // cell.accessoryType = restaurantIsVisited[indexPath.row] ? .Checkmark : .None
+        
         return cell
     }
     
@@ -100,6 +113,7 @@ class RestaurantTableViewController: UITableViewController {
             (action: UIAlertAction!) -> Void in
                 if let cell = tableView.cellForRowAtIndexPath(indexPath) {
                     cell.accessoryType = .Checkmark
+                    self.restaurantIsVisited[indexPath.row] = true
                 }
         })
         
