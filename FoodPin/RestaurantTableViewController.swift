@@ -31,7 +31,7 @@ class RestaurantTableViewController: UITableViewController {
         "Spanish", "British", "Thai"]
   
 // following fails :-/
-//    var restaurantIsVisted = [Bool](count: restaurantNames.count, repeatedValues: false)
+//  var restaurantIsVisted = [Bool](count: restaurantNames.count, repeatedValues: false)
     var restaurantIsVisited = [Bool](count: 21, repeatedValue: false)
     
     override func viewDidLoad() {
@@ -78,24 +78,12 @@ class RestaurantTableViewController: UITableViewController {
         
         cell.restaurantTypeLabel.text = restaurantTypes[indexPath.row]
         cell.restaurantLocationLabel.text = restaurantLocations[indexPath.row]
-        
-        if restaurantIsVisited[indexPath.row] {
-            cell.accessoryType = .Checkmark
-        } else {
-            cell.accessoryType = .None
-        }
-        
-        // alternative in ternery code
-        // cell.accessoryType = restaurantIsVisited[indexPath.row] ? .Checkmark : .None
+        cell.accessoryType = restaurantIsVisited[indexPath.row] ? .Checkmark : .None
         
         return cell
     }
     
-    // watch out! earlier verison had a bug because I had selected different function.
-    // the right one: override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    // the wrong one: override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let optionMenu = UIAlertController(title: nil, message: "Call me may be?", preferredStyle: UIAlertControllerStyle.ActionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
         optionMenu.addAction(cancelAction)
@@ -109,10 +97,6 @@ class RestaurantTableViewController: UITableViewController {
         let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: .Default, handler: callActionHandler)
         optionMenu.addAction(callAction)
         
-        // looks like there is some bug. the tableView isn't displayed properly. 
-        // row 0 doesn't correspond to array 0. Selecting some row putting
-        // checkmark on some other row :(
-        
         let isVisitedAction = UIAlertAction(title: "Visited?", style: .Default, handler: {
             (action: UIAlertAction!) -> Void in
                 if let cell = tableView.cellForRowAtIndexPath(indexPath) {
@@ -123,10 +107,6 @@ class RestaurantTableViewController: UITableViewController {
         
         optionMenu.addAction(isVisitedAction)
         presentViewController(optionMenu, animated: true, completion: nil)
-        
-        // following should deselect cell after optionMenu is presented
-        // however it is not working as expected. May be it is related to the 
-        // bug above mentioned.
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
     
