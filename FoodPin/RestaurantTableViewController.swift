@@ -105,6 +105,11 @@ class RestaurantTableViewController: UITableViewController {
         
         optionMenu.addAction(isVisitedAction)
         presentViewController(optionMenu, animated: true, completion: nil)
+        
+        // following should deselect cell after optionMenu is presented
+        // however it is not working as expected. May be it is related to the 
+        // bug above mentioned.
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
     
     override func prefersStatusBarHidden() -> Bool {
