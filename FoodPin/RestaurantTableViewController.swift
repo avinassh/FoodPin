@@ -50,12 +50,12 @@ class RestaurantTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "Cell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel.text = restaurantNames[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as CustomTableViewCell
+        cell.restaurantNameLabel.text = restaurantNames[indexPath.row]
         // as of now this code displays random images. should be edited to 
         // display proper image for each restaurant
         let randomImageIndex = Int(arc4random_uniform(UInt32(restaurantImages.count)))
-        cell.imageView.image = UIImage(named: restaurantImages[randomImageIndex])
+        cell.restaurantThumbnail.image = UIImage(named: restaurantImages[randomImageIndex])
         return cell
     }
     
