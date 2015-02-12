@@ -92,6 +92,18 @@ class RestaurantTableViewController: UITableViewController {
         let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: .Default, handler: callActionHandler)
         optionMenu.addAction(callAction)
         
+        // looks like there is some bug. the tableView isn't displayed properly. 
+        // row 0 doesn't correspond to array 0. Selecting some row putting
+        // checkmark on some other row :(
+        
+        let isVisitedAction = UIAlertAction(title: "Visited?", style: .Default, handler: {
+            (action: UIAlertAction!) -> Void in
+                if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+                    cell.accessoryType = .Checkmark
+                }
+        })
+        
+        optionMenu.addAction(isVisitedAction)
         presentViewController(optionMenu, animated: true, completion: nil)
     }
     
