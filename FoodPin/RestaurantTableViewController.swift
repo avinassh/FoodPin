@@ -91,7 +91,11 @@ class RestaurantTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    // watch out! earlier verison had a bug because I had selected different function.
+    // the right one: override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    // the wrong one: override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let optionMenu = UIAlertController(title: nil, message: "Call me may be?", preferredStyle: UIAlertControllerStyle.ActionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
         optionMenu.addAction(cancelAction)
