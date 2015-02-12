@@ -78,6 +78,13 @@ class RestaurantTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        let optionMenu = UIAlertController(title: nil, message: "Call me may be?", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        optionMenu.addAction(cancelAction)
+        presentViewController(optionMenu, animated: true, completion: nil)
+    }
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
