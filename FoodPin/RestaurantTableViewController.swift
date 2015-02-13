@@ -152,7 +152,16 @@ class RestaurantTableViewController: UITableViewController {
                 self.presentViewController(shareMenu, animated: true, completion: nil)
             }
         )
-        return [shareAction]
+        
+        var deleteAction = UITableViewRowAction(style: .Default, title: "Delete",
+            handler: { (action: UITableViewRowAction!, indexPath: NSIndexPath!) in
+                self.restaurantNames.removeAtIndex(indexPath.row)
+                self.restaurantIsVisited.removeAtIndex(indexPath.row)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }
+        )
+        
+        return [shareAction, deleteAction]
     }
     
     override func prefersStatusBarHidden() -> Bool {
