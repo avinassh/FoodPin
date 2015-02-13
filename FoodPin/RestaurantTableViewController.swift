@@ -163,7 +163,7 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     override func prefersStatusBarHidden() -> Bool {
-        return true
+        return false
     }
 
     /*
