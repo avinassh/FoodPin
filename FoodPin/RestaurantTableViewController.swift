@@ -177,11 +177,7 @@ class RestaurantTableViewController: UITableViewController {
         if segue.identifier == "showRestaurantDetails" {
             if let indexPath = tableView.indexPathForSelectedRow() {
                 let destinationController = segue.destinationViewController as RestarurantDetailViewController
-                let restaurant = restaurants[indexPath.row]
-                destinationController.restaurantImage = restaurant.image
-                destinationController.restaurantName = restaurant.name
-                destinationController.restaurantLocation = restaurant.location
-                destinationController.restaurantType = restaurant.type
+                destinationController.restaurant = restaurants[indexPath.row]
             }
         }
     }

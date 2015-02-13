@@ -8,27 +8,19 @@
 
 import UIKit
 
-class RestarurantDetailViewController: UIViewController {
-
-    @IBOutlet weak var restaurantImageView: UIImageView!
-    @IBOutlet weak var restaurantNameLabel: UILabel!
-    @IBOutlet weak var restaurantLocationLabel: UILabel!
-    @IBOutlet weak var restaurantTypeLabel: UILabel!
+// the following class acutally should inherit UITableViewController class. 
+// However it fails if done without any changes to the code
+// error:  *** Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: '-[UITableViewController loadView] loaded the "nel-69-I5f-view-q3h-T8-DJW" nib but didn't get a UITableView.'
+class RestarurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var restaurantImage: String!
-    var restaurantName: String!
-    var restaurantLocation: String!
-    var restaurantType: String!
+    var restaurant: Restaurant!
+    
+    @IBOutlet weak var restaurantImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        
-        restaurantImageView.image = UIImage(named: restaurantImage)
-        restaurantNameLabel.text = restaurantName
-        restaurantLocationLabel.text = restaurantLocation
-        restaurantTypeLabel.text = restaurantType
+        restaurantImage.image = UIImage(named: restaurant.image)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +28,31 @@ class RestarurantDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as DetailTableViewCell
+        switch indexPath.row {
+        case 0:
+            cell.fieldLabel.text = "Name"
+            cell.valueLabel.text = restaurant.name
+        case 1:
+            cell.fieldLabel.text = "Type"
+            cell.valueLabel.text = restaurant.type
+        case 2:
+            cell.fieldLabel.text = "Location"
+            cell.valueLabel.text = restaurant.location
+        case 3:
+            cell.fieldLabel.text = "Been here"
+            cell.valueLabel.text = restaurant.isVisited ? "Yes, I have been here!" : "No"
+        default:
+            cell.fieldLabel.text = ""
+            cell.valueLabel.text = ""
+        }
+        return cell
+    }
 
     /*
     // MARK: - Navigation
