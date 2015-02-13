@@ -114,18 +114,12 @@ class RestaurantTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
     
+
     // adding delete button on swipe to left
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            restaurantNames.removeAtIndex(indexPath.row)
-            restaurantIsVisited.removeAtIndex(indexPath.row)
-            // reloadData is a costly affair and unnecessary. Instead of reloading 
-            // the entire data, we could just delete that corresponding row 
-            // using deleteRowsAtIndexPath
-            // tableView.reloadData()
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        }
+        // looks its not possible to have swipe actions even though this method 
+        // is never called. Nor it reqiures any implementation.
     }
     
     // using UITableViewRowAction (iOS 8 or after) to implement delete or other 
