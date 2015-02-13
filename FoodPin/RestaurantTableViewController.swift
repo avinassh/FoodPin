@@ -128,6 +128,33 @@ class RestaurantTableViewController: UITableViewController {
         }
     }
     
+    // using UITableViewRowAction (iOS 8 or after) to implement delete or other 
+    // custom row actions
+    // to use this, tableview(_:editActionsForRowAtIndexPath:) needs to be 
+    // implemented
+    // however this will remove automatically generated delete button. So we 
+    // have to implement delete mechanism also
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        var shareAction = UITableViewRowAction(style: .Default, title: "Share",
+            handler: { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+                let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .ActionSheet)
+                let twitterAction = UIAlertAction(title: "Twitter", style: .Default, handler: nil)
+                let facebookAction = UIAlertAction(title: "Facebook", style: .Default, handler: nil)
+                let emailAction = UIAlertAction(title: "email", style: .Default, handler: nil)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+                
+                shareMenu.addAction(twitterAction)
+                shareMenu.addAction(facebookAction)
+                shareMenu.addAction(emailAction)
+                shareMenu.addAction(cancelAction)
+                
+                self.presentViewController(shareMenu, animated: true, completion: nil)
+            }
+        )
+        return [shareAction]
+    }
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
