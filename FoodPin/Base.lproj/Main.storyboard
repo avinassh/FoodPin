@@ -58,7 +58,7 @@
                                     <outlet property="restaurantThumbnail" destination="aMR-AU-UCW" id="P3W-X0-dCd"/>
                                     <outlet property="restaurantTypeLabel" destination="TJi-VO-w3y" id="nQR-0h-122"/>
                                     <outlet property="restaurantVisited" destination="Iwt-vO-hf9" id="7cl-hH-zcI"/>
-                                    <segue destination="nel-69-I5f" kind="push" identifier="showRestaurantDetails" id="wJv-jQ-Uj8"/>
+                                    <segue destination="nel-69-I5f" kind="show" identifier="showRestaurantDetails" id="wJv-jQ-Uj8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
