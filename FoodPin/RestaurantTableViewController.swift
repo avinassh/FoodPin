@@ -97,14 +97,29 @@ class RestaurantTableViewController: UITableViewController {
         let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: .Default, handler: callActionHandler)
         optionMenu.addAction(callAction)
         
-        let isVisitedAction = UIAlertAction(title: "Visited?", style: .Default, handler: {
+        var actionMessageToDisplay: String = "I have been here 😄"
+        var visited = false
+        
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+            if cell.accessoryType == UITableViewCellAccessoryType.Checkmark && restaurantIsVisited[indexPath.row] {
+                actionMessageToDisplay = "I have not been here 😨"
+                visited = true
+            }
+        }
+        
+        let isVisitedAction = UIAlertAction(title: actionMessageToDisplay, style: .Default, handler: {
             (action: UIAlertAction!) -> Void in
                 if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-                    cell.accessoryType = .Checkmark
-                    self.restaurantIsVisited[indexPath.row] = true
+                    if visited {
+                        cell.accessoryType = .None
+                        self.restaurantIsVisited[indexPath.row] = false
+                    } else {
+                        cell.accessoryType = .Checkmark
+                        self.restaurantIsVisited[indexPath.row] = true
+                    }
                 }
         })
-        
+    
         optionMenu.addAction(isVisitedAction)
         presentViewController(optionMenu, animated: true, completion: nil)
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
