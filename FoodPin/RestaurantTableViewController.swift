@@ -117,8 +117,10 @@ class RestaurantTableViewController: UITableViewController {
     // adding delete button on swipe to left
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        restaurantNames.removeAtIndex(indexPath.row)
-        tableView.reloadData()
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            restaurantNames.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+        }
     }
     
     override func prefersStatusBarHidden() -> Bool {
