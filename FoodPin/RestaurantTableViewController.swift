@@ -119,7 +119,11 @@ class RestaurantTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
             restaurantNames.removeAtIndex(indexPath.row)
-            tableView.reloadData()
+            // reloadData is a costly affair and unnecessary. Instead of reloading 
+            // the entire data, we could just delete that corresponding row 
+            // using deleteRowsAtIndexPath
+            // tableView.reloadData()
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
     
