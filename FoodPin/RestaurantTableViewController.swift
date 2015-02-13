@@ -88,18 +88,19 @@ class RestaurantTableViewController: UITableViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
         optionMenu.addAction(cancelAction)
         
-        let callActionHandler = { (action: UIAlertAction!) -> Void in
-            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Call feature not available yet", preferredStyle: .Alert)
-            alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            // without self.prese... following would fail. self is required.
-            self.presentViewController(alertMessage, animated: true, completion: nil)
+        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: .Default) {
+            (action: UIAlertAction!) -> Void in
+                let alertMessage = UIAlertController(title: "Service Unavailable", message: "Call feature not available yet", preferredStyle: .Alert)
+                alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                // without self.prese... following would fail. self is required.
+                self.presentViewController(alertMessage, animated: true, completion: nil)
         }
-        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: .Default, handler: callActionHandler)
+
         optionMenu.addAction(callAction)
         
         let actionMessageToDisplay = restaurantIsVisited[indexPath.row] ? "I have not been here 😨" : "I have been here 😄"
         
-        let isVisitedAction = UIAlertAction(title: actionMessageToDisplay, style: .Default, handler: {
+        let isVisitedAction = UIAlertAction(title: actionMessageToDisplay, style: .Default) {
             (action: UIAlertAction!) -> Void in
                 if let cell = tableView.cellForRowAtIndexPath(indexPath) {
                     let cell = cell as CustomTableViewCell
@@ -107,7 +108,7 @@ class RestaurantTableViewController: UITableViewController {
                     //cell.accessoryType =  self.restaurantIsVisited[indexPath.row] ? .Checkmark : .None
                     cell.restaurantVisited.text = self.restaurantIsVisited[indexPath.row] ? "♥️" : ""
                 }
-        })
+        }
     
         optionMenu.addAction(isVisitedAction)
         presentViewController(optionMenu, animated: true, completion: nil)
@@ -130,8 +131,8 @@ class RestaurantTableViewController: UITableViewController {
     // have to implement delete mechanism also
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
-        var shareAction = UITableViewRowAction(style: .Default, title: "Share",
-            handler: { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+        var shareAction = UITableViewRowAction(style: .Default, title: "Share") {
+            (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
                 let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .ActionSheet)
                 let twitterAction = UIAlertAction(title: "Twitter", style: .Default, handler: nil)
                 let facebookAction = UIAlertAction(title: "Facebook", style: .Default, handler: nil)
@@ -145,15 +146,14 @@ class RestaurantTableViewController: UITableViewController {
                 
                 self.presentViewController(shareMenu, animated: true, completion: nil)
             }
-        )
         
-        var deleteAction = UITableViewRowAction(style: .Default, title: "Delete",
-            handler: { (action: UITableViewRowAction!, indexPath: NSIndexPath!) in
+        
+        var deleteAction = UITableViewRowAction(style: .Default, title: "Delete") {
+            (action: UITableViewRowAction!, indexPath: NSIndexPath!) in
                 self.restaurantNames.removeAtIndex(indexPath.row)
                 self.restaurantIsVisited.removeAtIndex(indexPath.row)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
-        )
         
         return [shareAction, deleteAction]
     }
