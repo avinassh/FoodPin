@@ -137,6 +137,7 @@
                     <navigationItem key="navigationItem" id="1bE-No-ZrU"/>
                     <connections>
                         <outlet property="restaurantImage" destination="AMs-83-N77" id="d8j-rt-Iqa"/>
+                        <outlet property="tableView" destination="Jns-3w-hLs" id="esg-27-1LP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ix-xJ-Tel" userLabel="First Responder" sceneMemberID="firstResponder"/>

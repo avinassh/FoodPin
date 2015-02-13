@@ -14,13 +14,17 @@ import UIKit
 class RestarurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var restaurant: Restaurant!
-    
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var restaurantImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         restaurantImage.image = UIImage(named: restaurant.image)
+        tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
+        tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
+        // removes extra seperators:
+        tableView.tableFooterView = UIView(frame: CGRectZero)
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +55,7 @@ class RestarurantDetailViewController: UIViewController, UITableViewDataSource, 
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
         }
+        cell.backgroundColor = UIColor.clearColor()
         return cell
     }
 
