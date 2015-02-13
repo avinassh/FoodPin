@@ -78,8 +78,8 @@ class RestaurantTableViewController: UITableViewController {
         
         cell.restaurantTypeLabel.text = restaurantTypes[indexPath.row]
         cell.restaurantLocationLabel.text = restaurantLocations[indexPath.row]
-        cell.accessoryType = restaurantIsVisited[indexPath.row] ? .Checkmark : .None
-        
+        //cell.accessoryType = restaurantIsVisited[indexPath.row] ? .Checkmark : .None
+        cell.restaurantVisited.text = restaurantIsVisited[indexPath.row] ? "♥️" : ""
         return cell
     }
     
@@ -102,8 +102,10 @@ class RestaurantTableViewController: UITableViewController {
         let isVisitedAction = UIAlertAction(title: actionMessageToDisplay, style: .Default, handler: {
             (action: UIAlertAction!) -> Void in
                 if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+                    let cell = cell as CustomTableViewCell
                     self.restaurantIsVisited[indexPath.row] = self.restaurantIsVisited[indexPath.row] ? false : true
-                    cell.accessoryType =  self.restaurantIsVisited[indexPath.row] ? .Checkmark : .None
+                    //cell.accessoryType =  self.restaurantIsVisited[indexPath.row] ? .Checkmark : .None
+                    cell.restaurantVisited.text = self.restaurantIsVisited[indexPath.row] ? "♥️" : ""
                 }
         })
     

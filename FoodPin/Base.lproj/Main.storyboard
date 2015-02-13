@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AyS-Xt-OKq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Restaurant Table View Controller-->
@@ -39,13 +40,24 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwt-vO-hf9">
+                                            <rect key="frame" x="579" y="8" width="13" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Iwt-vO-hf9" firstAttribute="top" secondItem="ONI-V7-t4j" secondAttribute="topMargin" id="Crj-rO-jgd"/>
+                                        <constraint firstItem="Iwt-vO-hf9" firstAttribute="trailing" secondItem="ONI-V7-t4j" secondAttribute="trailingMargin" id="nzN-27-TSh"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="restaurantLocationLabel" destination="HVE-lf-5eB" id="u0T-KW-fc9"/>
                                     <outlet property="restaurantNameLabel" destination="V1Z-XS-n5H" id="Kop-RJ-lJn"/>
                                     <outlet property="restaurantThumbnail" destination="aMR-AU-UCW" id="P3W-X0-dCd"/>
                                     <outlet property="restaurantTypeLabel" destination="TJi-VO-w3y" id="nQR-0h-122"/>
+                                    <outlet property="restaurantVisited" destination="Iwt-vO-hf9" id="7cl-hH-zcI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
