@@ -30,8 +30,8 @@ class RestaurantTableViewController: UITableViewController {
         "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish",
         "Spanish", "British", "Thai"]
   
-// following fails :-/
-//  var restaurantIsVisted = [Bool](count: restaurantNames.count, repeatedValues: false)
+    // following fails :-/
+    // var restaurantIsVisted = [Bool](count: restaurantNames.count, repeatedValues: false)
     var restaurantIsVisited = [Bool](count: 21, repeatedValue: false)
     
     override func viewDidLoad() {
@@ -112,6 +112,13 @@ class RestaurantTableViewController: UITableViewController {
         optionMenu.addAction(isVisitedAction)
         presentViewController(optionMenu, animated: true, completion: nil)
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    }
+    
+    // adding delete button on swipe to left
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        restaurantNames.removeAtIndex(indexPath.row)
+        tableView.reloadData()
     }
     
     override func prefersStatusBarHidden() -> Bool {
