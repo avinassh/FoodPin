@@ -17,7 +17,8 @@ class RestaurantTableViewController: UITableViewController {
         "Five Leaves", "Cafe Lore", "Confessional", "Barrafina",
         "Donostia", "Royal Oak", "CASK Pub and Kitchen"]
     
-    var restaurantImages = ["1", "2", "3", "4", "5", "6", "7", "8"]
+    var restaurantImages = ["1", "2", "3", "4", "5", "6", "7", "8", "1", "2",
+        "3", "4", "5", "6", "7", "8", "1", "2", "3", "4", "5", "6", "7", "8"]
     
     var restaurantLocations = ["Hong Kong", "Hong Kong", "Hong Kong",
         "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Sydney", "Sydney",
@@ -69,8 +70,9 @@ class RestaurantTableViewController: UITableViewController {
         cell.restaurantNameLabel.text = restaurantNames[indexPath.row]
         // as of now this code displays random images. should be edited to 
         // display proper image for each restaurant
-        let randomImageIndex = Int(arc4random_uniform(UInt32(restaurantImages.count)))
-        cell.restaurantThumbnail.image = UIImage(named: restaurantImages[randomImageIndex])
+        //let randomImageIndex = Int(arc4random_uniform(UInt32(restaurantImages.count)))
+        //cell.restaurantThumbnail.image = UIImage(named: restaurantImages[randomImageIndex])
+        cell.restaurantThumbnail.image = UIImage(named: restaurantImages[indexPath.row])
         
         // following code shows rounded thumbnail
         cell.restaurantThumbnail.layer.cornerRadius = cell.restaurantThumbnail.frame.width / 2
@@ -82,7 +84,8 @@ class RestaurantTableViewController: UITableViewController {
         cell.restaurantVisited.text = restaurantIsVisited[indexPath.row] ? "♥️" : ""
         return cell
     }
-    
+
+/* 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let optionMenu = UIAlertController(title: nil, message: "Call me may be?", preferredStyle: UIAlertControllerStyle.ActionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
@@ -114,7 +117,7 @@ class RestaurantTableViewController: UITableViewController {
         presentViewController(optionMenu, animated: true, completion: nil)
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
-    
+*/
 
     // adding delete button on swipe to left
     
@@ -160,6 +163,15 @@ class RestaurantTableViewController: UITableViewController {
         deleteAction.backgroundColor = UIColor(red: 51.0/255.0, green: 51.0/255.0, blue: 51.0/255.0, alpha: 1.0)
         
         return [shareAction, deleteAction]
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showRestaurantDetails" {
+            if let indexPath = tableView.indexPathForSelectedRow() {
+                let destinationController = segue.destinationViewController as RestarurantDetailViewController
+                destinationController.restaurantImage = restaurantImages[indexPath.row]
+            }
+        }
     }
     
     override func prefersStatusBarHidden() -> Bool {
