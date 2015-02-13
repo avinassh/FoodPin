@@ -35,9 +35,17 @@ class RestaurantTableViewController: UITableViewController {
     // var restaurantIsVisted = [Bool](count: restaurantNames.count, repeatedValues: false)
     var restaurantIsVisited = [Bool](count: 21, repeatedValue: false)
     
+    var restaurants = [Restaurant]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // not sure if I should be initiliazting restaurant data here :-/
+        for i in 0..<restaurantNames.count {
+            let restaurant = Restaurant(name: restaurantNames[i], type: restaurantTypes[i], location: restaurantLocations[i], image: restaurantImages[i], isVisited: restaurantIsVisited[i])
+            restaurants.append(restaurant)
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -61,27 +69,28 @@ class RestaurantTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return restaurantNames.count
+        return restaurants.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as CustomTableViewCell
-        cell.restaurantNameLabel.text = restaurantNames[indexPath.row]
+        let restaurant = restaurants[indexPath.row]
+        cell.restaurantNameLabel.text = restaurant.name
         // as of now this code displays random images. should be edited to 
         // display proper image for each restaurant
         //let randomImageIndex = Int(arc4random_uniform(UInt32(restaurantImages.count)))
         //cell.restaurantThumbnail.image = UIImage(named: restaurantImages[randomImageIndex])
-        cell.restaurantThumbnail.image = UIImage(named: restaurantImages[indexPath.row])
+        cell.restaurantThumbnail.image = UIImage(named: restaurant.image)
         
         // following code shows rounded thumbnail
         cell.restaurantThumbnail.layer.cornerRadius = cell.restaurantThumbnail.frame.width / 2
         cell.restaurantThumbnail.clipsToBounds = true
         
-        cell.restaurantTypeLabel.text = restaurantTypes[indexPath.row]
-        cell.restaurantLocationLabel.text = restaurantLocations[indexPath.row]
+        cell.restaurantTypeLabel.text = restaurant.type
+        cell.restaurantLocationLabel.text = restaurant.location
         //cell.accessoryType = restaurantIsVisited[indexPath.row] ? .Checkmark : .None
-        cell.restaurantVisited.text = restaurantIsVisited[indexPath.row] ? "♥️" : ""
+        cell.restaurantVisited.text = restaurant.isVisited ? "♥️" : ""
         return cell
     }
 
@@ -153,8 +162,7 @@ class RestaurantTableViewController: UITableViewController {
         
         var deleteAction = UITableViewRowAction(style: .Default, title: "Delete") {
             (action: UITableViewRowAction!, indexPath: NSIndexPath!) in
-                self.restaurantNames.removeAtIndex(indexPath.row)
-                self.restaurantIsVisited.removeAtIndex(indexPath.row)
+                self.restaurants.removeAtIndex(indexPath.row)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
         
@@ -169,10 +177,11 @@ class RestaurantTableViewController: UITableViewController {
         if segue.identifier == "showRestaurantDetails" {
             if let indexPath = tableView.indexPathForSelectedRow() {
                 let destinationController = segue.destinationViewController as RestarurantDetailViewController
-                destinationController.restaurantImage = restaurantImages[indexPath.row]
-                destinationController.restaurantName = restaurantNames[indexPath.row]
-                destinationController.restaurantLocation = restaurantLocations[indexPath.row]
-                destinationController.restaurantType = restaurantTypes[indexPath.row]
+                let restaurant = restaurants[indexPath.row]
+                destinationController.restaurantImage = restaurant.image
+                destinationController.restaurantName = restaurant.name
+                destinationController.restaurantLocation = restaurant.location
+                destinationController.restaurantType = restaurant.type
             }
         }
     }
