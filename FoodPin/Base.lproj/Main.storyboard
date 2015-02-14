@@ -147,10 +147,23 @@
                                     <outlet property="delegate" destination="nel-69-I5f" id="2xT-FZ-CdX"/>
                                 </connections>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6y-UP-PuZ">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="RQG-VF-GMK"/>
+                                    <barButtonItem systemItem="action" id="h2L-2H-sFe"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="neM-Sc-AAd"/>
+                                    <barButtonItem systemItem="compose" id="4Kp-KU-n5Z"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="daq-OC-h5I"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="139-9R-wXW" firstAttribute="top" secondItem="f6y-UP-PuZ" secondAttribute="bottom" id="2qX-Zi-zun"/>
                             <constraint firstAttribute="centerY" secondItem="Jns-3w-hLs" secondAttribute="centerY" id="8P3-N6-vMI"/>
+                            <constraint firstItem="f6y-UP-PuZ" firstAttribute="leading" secondItem="q3h-T8-DJW" secondAttribute="leadingMargin" constant="-16" id="JKy-D9-xkv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f6y-UP-PuZ" secondAttribute="trailing" constant="-16" id="JOW-SJ-7IL"/>
                             <constraint firstItem="Jns-3w-hLs" firstAttribute="bottom" secondItem="139-9R-wXW" secondAttribute="top" id="YoT-q1-91H"/>
                             <constraint firstAttribute="centerX" secondItem="Jns-3w-hLs" secondAttribute="centerX" id="cpM-jE-eTn"/>
                         </constraints>
