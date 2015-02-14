@@ -9,14 +9,15 @@
 import Foundation
 
 class Restaurant {
-    var name, type, location, image: String
+    var name, type, location, image, phoneNum: String
     var isVisited: Bool
     
-    init(name: String, type: String, location: String, image: String, isVisited: Bool) {
+    init(name: String, type: String, location: String, image: String, isVisited: Bool, phoneNum: String) {
         self.name = name
         self.type = type
         self.location = location
         self.image = image
         self.isVisited = isVisited
+        self.phoneNum = phoneNum
     }
 }

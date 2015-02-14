@@ -42,7 +42,7 @@ class RestaurantTableViewController: UITableViewController {
         
         // not sure if I should be initiliazting restaurant data here :-/
         for i in 0..<restaurantNames.count {
-            let restaurant = Restaurant(name: restaurantNames[i], type: restaurantTypes[i], location: restaurantLocations[i], image: restaurantImages[i], isVisited: restaurantIsVisited[i])
+            let restaurant = Restaurant(name: restaurantNames[i], type: restaurantTypes[i], location: restaurantLocations[i], image: restaurantImages[i], isVisited: restaurantIsVisited[i], phoneNum: "+91-123-000-\(i)")
             restaurants.append(restaurant)
         }
         
