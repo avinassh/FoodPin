@@ -82,7 +82,13 @@ class RestarurantDetailViewController: UIViewController, UITableViewDataSource, 
         // list view, it will be visible here again
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
-
+    
+    // empty method, but to tell app that view can be closed and this 
+    // view will be back. this is called unwind segue
+    @IBAction func close(segue:UIStoryboardSegue) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
