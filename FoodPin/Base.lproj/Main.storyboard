@@ -19,23 +19,27 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TZb-Rm-CV5" id="ONI-V7-t4j">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aMR-AU-UCW">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aMR-AU-UCW">
                                             <rect key="frame" x="15" y="10" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="EZV-xH-3hp"/>
+                                                <constraint firstAttribute="width" constant="60" id="agl-6f-VGH"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1Z-XS-n5H">
-                                            <rect key="frame" x="86" y="9" width="205" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1Z-XS-n5H">
+                                            <rect key="frame" x="86" y="9" width="45" height="22"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVE-lf-5eB">
-                                            <rect key="frame" x="86" y="35" width="205" height="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVE-lf-5eB">
+                                            <rect key="frame" x="86" y="35" width="51" height="18"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJi-VO-w3y">
-                                            <rect key="frame" x="86" y="54" width="205" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJi-VO-w3y">
+                                            <rect key="frame" x="86" y="54" width="25" height="16"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="11"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -48,8 +52,16 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="HVE-lf-5eB" firstAttribute="top" secondItem="ONI-V7-t4j" secondAttribute="topMargin" constant="27" id="AC0-8R-nvT"/>
+                                        <constraint firstItem="V1Z-XS-n5H" firstAttribute="top" secondItem="ONI-V7-t4j" secondAttribute="topMargin" constant="1" id="ALK-KI-MSA"/>
                                         <constraint firstItem="Iwt-vO-hf9" firstAttribute="top" secondItem="ONI-V7-t4j" secondAttribute="topMargin" id="Crj-rO-jgd"/>
+                                        <constraint firstItem="aMR-AU-UCW" firstAttribute="leading" secondItem="ONI-V7-t4j" secondAttribute="leadingMargin" constant="7" id="DgD-VM-6JX"/>
+                                        <constraint firstItem="V1Z-XS-n5H" firstAttribute="leading" secondItem="aMR-AU-UCW" secondAttribute="trailing" constant="11" id="TxS-FT-mrf"/>
+                                        <constraint firstItem="TJi-VO-w3y" firstAttribute="top" secondItem="ONI-V7-t4j" secondAttribute="topMargin" constant="46" id="acu-zo-6OR"/>
+                                        <constraint firstItem="aMR-AU-UCW" firstAttribute="top" secondItem="ONI-V7-t4j" secondAttribute="topMargin" constant="2" id="bf3-nu-q3I"/>
                                         <constraint firstItem="Iwt-vO-hf9" firstAttribute="trailing" secondItem="ONI-V7-t4j" secondAttribute="trailingMargin" id="nzN-27-TSh"/>
+                                        <constraint firstItem="TJi-VO-w3y" firstAttribute="leading" secondItem="aMR-AU-UCW" secondAttribute="trailing" constant="11" id="sMy-J1-BIQ"/>
+                                        <constraint firstItem="HVE-lf-5eB" firstAttribute="leading" secondItem="aMR-AU-UCW" secondAttribute="trailing" constant="11" id="zWS-s6-mOv"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

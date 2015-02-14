@@ -46,6 +46,9 @@ class RestaurantTableViewController: UITableViewController {
         // Empty back button (in showDetail scene) or any next scene
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         
+        //tableView.estimatedRowHeight = 80.0
+        //tableView.rowHeight = UITableViewAutomaticDimension
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
