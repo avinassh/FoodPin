@@ -25,6 +25,9 @@ class RestarurantDetailViewController: UIViewController, UITableViewDataSource, 
         tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
         // removes extra seperators:
         tableView.tableFooterView = UIView(frame: CGRectZero)
+        
+        // sets the title of navigation bar in DetailView
+        title = restaurant.name
     }
 
     override func didReceiveMemoryWarning() {
