@@ -62,6 +62,18 @@ class RestarurantDetailViewController: UIViewController, UITableViewDataSource, 
         return cell
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // set it to false, so that even user swipes down, the status bar 
+        // remains visible. When table list view is loaded back, it will set 
+        // to true. so that navbar will be hidden when user swipes down
+        navigationController?.hidesBarsOnSwipe = false
+        // keep it visible always, in this view. So even it was hidden in table 
+        // list view, it will be visible here again
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+
     /*
     // MARK: - Navigation
 

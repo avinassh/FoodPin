@@ -185,6 +185,14 @@ class RestaurantTableViewController: UITableViewController {
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // once the view is loaded (or loaded everytime, unlike viewDidLoad called
+        // only first time view is loaded) hide the status bar when user swipes up
+        navigationController?.hidesBarsOnSwipe = true
+    }
+    
     override func prefersStatusBarHidden() -> Bool {
         return false
     }
