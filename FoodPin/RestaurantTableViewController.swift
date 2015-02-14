@@ -46,6 +46,9 @@ class RestaurantTableViewController: UITableViewController {
             restaurants.append(restaurant)
         }
         
+        // Empty back button (in showDetail scene) or any next scene
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
