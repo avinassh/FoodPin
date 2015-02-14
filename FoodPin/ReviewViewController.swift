@@ -12,10 +12,13 @@ class ReviewViewController: UIViewController {
 
     @IBOutlet weak var backgroundImageView: UIImageView!
     
+    var backgroundImage: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        backgroundImageView.image = UIImage(named: backgroundImage)
         var blurEffect = UIBlurEffect(style: .Dark)
         var blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds

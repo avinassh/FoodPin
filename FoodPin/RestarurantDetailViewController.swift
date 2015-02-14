@@ -89,6 +89,13 @@ class RestarurantDetailViewController: UIViewController, UITableViewDataSource, 
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showReview" {
+            let destinationViewController = segue.destinationViewController as ReviewViewController
+            destinationViewController.backgroundImage = restaurant.image
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
