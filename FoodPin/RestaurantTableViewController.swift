@@ -20,10 +20,7 @@ class RestaurantTableViewController: UITableViewController {
     var restaurantImages = ["1", "2", "3", "4", "5", "6", "7", "8", "1", "2",
         "3", "4", "5", "6", "7", "8", "1", "2", "3", "4", "5", "6", "7", "8"]
     
-    var restaurantLocations = ["Hong Kong", "Hong Kong", "Hong Kong",
-        "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Sydney", "Sydney",
-        "Sydney", "New York", "New York", "New York", "New York", "New York",
-        "New York", "New York", "London", "London", "London", "London"]
+    var restaurantLocations = ["G/F, 72 Po Hing Fong, Sheung Wan, Hong Kong", "Shop B, G/F, 22-24A Tai Ping San Street SOHO, Sheung Wan, Hong Kong", "Shop B, 18 Tai Ping Shan Road SOHO, Sheung Wan, Hong Kong", "Shop B, 20 Tai Ping Shan Road SOHO, Sheung Wan, Hong Kong", "24 Tai Ping Shan Road SOHO, Sheung Wan, Hong Kong", "Shop J-K., 200 Hollywood Road, SOHO, Sheung Wan, Hong Kong", "G/F, 62 Po Hing Fong, Sheung Wan, Hong Kong", "633 Bourke St Sydney New South Wales 2010 Surry Hills", "412-414 George St Sydney New South Wales", "Shop 1 61 York St Sydney New South Wales", "95 1st Ave New York, NY 10003", "229 S 4th St Brooklyn, NY 11211", "445 Graham Ave Brooklyn, NY 11211", "413 Graham Ave Brooklyn, NY 11211", "18 Bedford Ave Brooklyn, NY 11222", "Sunset Park 4601 4th Ave Brooklyn, NY 11220", "308 E 6th St New York, NY 10003", "54 Frith Street London W1D 4SL United Kingdom", "10 Seymour Place London W1H 7ND United Kingdom", "2 Regency Street London SW1P 4BZ United Kingdom", "22 Charlwood Street London SW1V 2DY Pimlico"]
     
     var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "Tea House",
         "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate",
