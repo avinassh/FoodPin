@@ -101,19 +101,28 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o1r-5Q-fZr" id="DMW-v5-XxE">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Field" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIU-pG-NaW">
-                                                    <rect key="frame" x="14" y="8" width="76" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Field" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIU-pG-NaW">
+                                                    <rect key="frame" x="17" y="8" width="32" height="19"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wyb-iG-EKm">
-                                                    <rect key="frame" x="119" y="7" width="186" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wyb-iG-EKm">
+                                                    <rect key="frame" x="119" y="8" width="183" height="19"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wIU-pG-NaW" firstAttribute="top" secondItem="DMW-v5-XxE" secondAttribute="topMargin" id="K8v-0Z-OZu"/>
+                                                <constraint firstItem="Wyb-iG-EKm" firstAttribute="top" secondItem="DMW-v5-XxE" secondAttribute="topMargin" id="aXV-Wp-gKM"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Wyb-iG-EKm" secondAttribute="trailing" constant="10" id="ems-5C-fFw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wIU-pG-NaW" secondAttribute="bottom" id="jwg-e6-pPf"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Wyb-iG-EKm" secondAttribute="bottom" id="n83-9n-sl1"/>
+                                                <constraint firstItem="wIU-pG-NaW" firstAttribute="leading" secondItem="DMW-v5-XxE" secondAttribute="leadingMargin" constant="9" id="qjc-dN-NTs"/>
+                                                <constraint firstItem="Wyb-iG-EKm" firstAttribute="leading" secondItem="DMW-v5-XxE" secondAttribute="leadingMargin" constant="111" id="qyY-0g-Khp"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="fieldLabel" destination="wIU-pG-NaW" id="D3Z-1E-RsV"/>

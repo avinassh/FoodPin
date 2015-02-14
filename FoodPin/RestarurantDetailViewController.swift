@@ -28,6 +28,12 @@ class RestarurantDetailViewController: UIViewController, UITableViewDataSource, 
         
         // sets the title of navigation bar in DetailView
         title = restaurant.name
+        
+        // location clips because it is way too long. In order to prevent that
+        // self sizing cells can be used (iOS 8 and above)
+        tableView.estimatedRowHeight = 36.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+
     }
 
     override func didReceiveMemoryWarning() {
