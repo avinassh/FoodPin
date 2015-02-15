@@ -370,6 +370,13 @@
                             <constraint firstAttribute="trailing" secondItem="16l-4w-nbI" secondAttribute="trailing" id="yq9-J0-6Zd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="16l-4w-nbI" id="O1O-9B-3BB"/>
+                        <outlet property="emailShareButton" destination="wCn-WU-HiI" id="uRf-sk-242"/>
+                        <outlet property="fbShareButton" destination="ppN-um-lbB" id="TEX-DS-f1T"/>
+                        <outlet property="messageShareButton" destination="oDi-es-Bm4" id="hfg-K3-dbL"/>
+                        <outlet property="twitterShareButton" destination="wPp-md-BOg" id="Sof-2x-t9N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F9T-Ie-851" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Mym-rn-5QA" userLabel="Exit" sceneMemberID="exit"/>

@@ -94,6 +94,10 @@ class RestarurantDetailViewController: UIViewController, UITableViewDataSource, 
             let destinationViewController = segue.destinationViewController as ReviewViewController
             destinationViewController.backgroundImage = restaurant.image
         }
+        if segue.identifier == "showShare" {
+            let destinationViewController = segue.destinationViewController as ShareViewController
+            destinationViewController.backgroundImage = restaurant.image
+        }
     }
     
     /*
