@@ -26,6 +26,14 @@ class ShareViewController: UIViewController {
         var blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
+        
+        let translateDown = CGAffineTransformMakeTranslation(0, 500)
+        fbShareButton.transform = translateDown
+        messageShareButton.transform = translateDown
+        
+        let translateUp = CGAffineTransformMakeTranslation(0, -2000)
+        twitterShareButton.transform = translateUp
+        emailShareButton.transform = translateUp
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +41,15 @@ class ShareViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(animated: Bool) {
+        UIView.animateWithDuration(2.0, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: nil, animations: {
+            let translate = CGAffineTransformMakeTranslation(0, 0)
+            self.twitterShareButton.transform = translate
+            self.fbShareButton.transform = translate
+            self.emailShareButton.transform = translate
+            self.messageShareButton.transform = translate
+            }, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
