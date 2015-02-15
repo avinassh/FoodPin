@@ -39,7 +39,9 @@ class ReviewViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         // following lines add grow effect to the scaled down version of dialogview
-        UIView.animateWithDuration(0.7, delay: 0.0, options: nil, animations: {
+        // UIView.animateWithDuration(0.7, delay: 0.0, options: nil, animations: {
+        // spring animation
+        UIView.animateWithDuration(0.7, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: nil, animations: {
                 self.dialogView.transform = CGAffineTransformMakeScale(1.0, 1.0)
             }, completion: nil)
     }
