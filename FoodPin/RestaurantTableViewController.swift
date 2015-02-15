@@ -185,6 +185,10 @@ class RestaurantTableViewController: UITableViewController {
         }
     }
     
+    @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {
+        
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
