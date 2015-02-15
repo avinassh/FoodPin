@@ -21,6 +21,7 @@
 		82EDFC921A8FBE8A00915E56 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EDFC911A8FBE8A00915E56 /* ReviewViewController.swift */; };
 		82EF2FD31A90BB5C00441BFD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EF2FD21A90BB5C00441BFD /* MapKit.framework */; };
 		82EF2FD51A90C27D00441BFD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF2FD41A90C27D00441BFD /* MapViewController.swift */; };
+		82EF2FD71A90F28300441BFD /* AddRestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF2FD61A90F28300441BFD /* AddRestaurantTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		82EDFC911A8FBE8A00915E56 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		82EF2FD21A90BB5C00441BFD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		82EF2FD41A90C27D00441BFD /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		82EF2FD61A90F28300441BFD /* AddRestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRestaurantTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				82EF2FD41A90C27D00441BFD /* MapViewController.swift */,
 				82EDFC911A8FBE8A00915E56 /* ReviewViewController.swift */,
 				82EB6BF71A907D4100080326 /* ShareViewController.swift */,
+				82EF2FD61A90F28300441BFD /* AddRestaurantTableViewController.swift */,
 				828233D81A8C54E6005D1D72 /* Images.xcassets */,
 				828233DA1A8C54E6005D1D72 /* LaunchScreen.xib */,
 				828233CF1A8C54E6005D1D72 /* Supporting Files */,
@@ -242,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82EF2FD71A90F28300441BFD /* AddRestaurantTableViewController.swift in Sources */,
 				82EBC0C91A8E4C4F001E6989 /* DetailTableViewCell.swift in Sources */,
 				82ED4C391A8C8E300052FF54 /* CustomTableViewCell.swift in Sources */,
 				82EDFC921A8FBE8A00915E56 /* ReviewViewController.swift in Sources */,
