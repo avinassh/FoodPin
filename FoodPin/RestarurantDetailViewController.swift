@@ -47,6 +47,7 @@ class RestarurantDetailViewController: UIViewController, UITableViewDataSource, 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as DetailTableViewCell
+        cell.mapButton.hidden = true
         switch indexPath.row {
         case 0:
             cell.fieldLabel.text = "Name"
@@ -57,6 +58,7 @@ class RestarurantDetailViewController: UIViewController, UITableViewDataSource, 
         case 2:
             cell.fieldLabel.text = "Location"
             cell.valueLabel.text = restaurant.location
+            cell.mapButton.hidden = false
         case 3:
             cell.fieldLabel.text = "Been here"
             cell.valueLabel.text = restaurant.isVisited ? "Yes, I have been here!" : "No"

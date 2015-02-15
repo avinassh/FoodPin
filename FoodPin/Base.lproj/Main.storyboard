@@ -120,16 +120,28 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wyb-iG-EKm">
-                                                    <rect key="frame" x="119" y="8" width="183" height="19"/>
+                                                    <rect key="frame" x="119" y="8" width="142" height="19"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRx-HY-067">
+                                                    <rect key="frame" x="274" y="8" width="38" height="20"/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                                    <state key="normal" title="Map">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="wPh-S7-KMg" kind="show" identifier="showMap" id="ac2-g5-8F7"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="wIU-pG-NaW" firstAttribute="top" secondItem="DMW-v5-XxE" secondAttribute="topMargin" id="K8v-0Z-OZu"/>
                                                 <constraint firstItem="Wyb-iG-EKm" firstAttribute="top" secondItem="DMW-v5-XxE" secondAttribute="topMargin" id="aXV-Wp-gKM"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Wyb-iG-EKm" secondAttribute="trailing" constant="10" id="ems-5C-fFw"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Wyb-iG-EKm" secondAttribute="trailing" constant="51" id="ems-5C-fFw"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="wIU-pG-NaW" secondAttribute="bottom" id="jwg-e6-pPf"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Wyb-iG-EKm" secondAttribute="bottom" id="n83-9n-sl1"/>
                                                 <constraint firstItem="wIU-pG-NaW" firstAttribute="leading" secondItem="DMW-v5-XxE" secondAttribute="leadingMargin" constant="9" id="qjc-dN-NTs"/>
@@ -138,6 +150,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="fieldLabel" destination="wIU-pG-NaW" id="D3Z-1E-RsV"/>
+                                            <outlet property="mapButton" destination="cRx-HY-067" id="I9E-Hq-pcY"/>
                                             <outlet property="valueLabel" destination="Wyb-iG-EKm" id="xqB-9i-EUZ"/>
                                         </connections>
                                     </tableViewCell>
@@ -184,7 +197,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ix-xJ-Tel" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495" y="517"/>
+            <point key="canvasLocation" x="1495" y="516"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="fYX-8l-ThG">
+            <objects>
+                <viewController id="wPh-S7-KMg" customClass="MapViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XfH-8S-O8U"/>
+                        <viewControllerLayoutGuide type="bottom" id="fom-2V-bIL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iZc-4b-7kT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="L7e-eD-qZD">
+                                <rect key="frame" x="0.0" y="28" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="L7e-eD-qZD" secondAttribute="bottom" constant="-28" id="Tp8-5e-Qbd"/>
+                            <constraint firstAttribute="trailing" secondItem="L7e-eD-qZD" secondAttribute="trailing" id="cX6-qL-yrW"/>
+                            <constraint firstItem="L7e-eD-qZD" firstAttribute="leading" secondItem="iZc-4b-7kT" secondAttribute="leading" id="fi9-y4-juz"/>
+                            <constraint firstItem="L7e-eD-qZD" firstAttribute="top" secondItem="XfH-8S-O8U" secondAttribute="bottom" constant="8" symbolic="YES" id="lF5-Ap-tX3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5fc-RF-3Hd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2229" y="516"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="DFf-B0-Z6l">
