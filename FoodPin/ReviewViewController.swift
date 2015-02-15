@@ -29,7 +29,10 @@ class ReviewViewController: UIViewController {
         backgroundImageView.addSubview(blurEffectView)
         
         // scales down the view when loaded. and then we use grow effect
-        dialogView.transform = CGAffineTransformMakeScale(0.0, 0.0)
+        // dialogView.transform = CGAffineTransformMakeScale(0.0, 0.0)
+        
+        // move the dialog down and out of the view, for slide up effect
+        dialogView.transform = CGAffineTransformMakeTranslation(0, 500)
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +45,8 @@ class ReviewViewController: UIViewController {
         // UIView.animateWithDuration(0.7, delay: 0.0, options: nil, animations: {
         // spring animation
         UIView.animateWithDuration(0.7, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: nil, animations: {
-                self.dialogView.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                //self.dialogView.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                self.dialogView.transform = CGAffineTransformMakeTranslation(0, 0)
             }, completion: nil)
     }
 
