@@ -83,7 +83,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPl-xj-TiK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077" y="465"/>
+            <point key="canvasLocation" x="679" y="517"/>
         </scene>
         <!--Restarurant Detail View Controller-->
         <scene sceneID="eqx-mJ-Ojn">
@@ -151,7 +151,11 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="RQG-VF-GMK"/>
-                                    <barButtonItem systemItem="action" id="h2L-2H-sFe"/>
+                                    <barButtonItem systemItem="action" id="h2L-2H-sFe">
+                                        <connections>
+                                            <segue destination="nMA-qs-mWj" kind="presentation" identifier="showShare" id="ert-EF-sLj"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="neM-Sc-AAd"/>
                                     <barButtonItem systemItem="compose" id="4Kp-KU-n5Z">
                                         <connections>
@@ -180,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ix-xJ-Tel" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1879" y="460"/>
+            <point key="canvasLocation" x="1495" y="517"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="DFf-B0-Z6l">
@@ -284,7 +288,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLT-Cr-GiO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="pag-yV-AZP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2621" y="460"/>
+            <point key="canvasLocation" x="2289" y="1366"/>
+        </scene>
+        <!--Share View Controller-->
+        <scene sceneID="Kwu-SK-dVJ">
+            <objects>
+                <viewController id="nMA-qs-mWj" customClass="ShareViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Ke-IX-lr4"/>
+                        <viewControllerLayoutGuide type="bottom" id="6L7-6k-gS6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DwA-sU-byF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shareBackground" translatesAutoresizingMaskIntoConstraints="NO" id="16l-4w-nbI">
+                                <rect key="frame" x="0.0" y="20" width="600" height="600"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTD-iL-5ip">
+                                <rect key="frame" x="170" y="190" width="260" height="259"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppN-um-lbB">
+                                        <rect key="frame" x="21" y="20" width="108" height="111"/>
+                                        <state key="normal" image="facebook">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPp-md-BOg">
+                                        <rect key="frame" x="129" y="21" width="110" height="110"/>
+                                        <state key="normal" image="twitter">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDi-es-Bm4">
+                                        <rect key="frame" x="21" y="129" width="110" height="110"/>
+                                        <state key="normal" image="message">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCn-WU-HiI">
+                                        <rect key="frame" x="130" y="129" width="109" height="111"/>
+                                        <state key="normal" image="email">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ppN-um-lbB" firstAttribute="top" secondItem="UTD-iL-5ip" secondAttribute="top" constant="20" id="1q7-cZ-6Dg"/>
+                                    <constraint firstAttribute="trailing" secondItem="wPp-md-BOg" secondAttribute="trailing" constant="21" id="2Qx-bp-L1l"/>
+                                    <constraint firstItem="oDi-es-Bm4" firstAttribute="leading" secondItem="UTD-iL-5ip" secondAttribute="leading" constant="21" id="CnT-A9-E2D"/>
+                                    <constraint firstAttribute="bottom" secondItem="oDi-es-Bm4" secondAttribute="bottom" constant="20" id="ELJ-hV-uM2"/>
+                                    <constraint firstAttribute="bottom" secondItem="wCn-WU-HiI" secondAttribute="bottom" constant="19" id="HaS-fG-QuH"/>
+                                    <constraint firstItem="wPp-md-BOg" firstAttribute="top" secondItem="UTD-iL-5ip" secondAttribute="top" constant="21" id="UVg-wU-x0S"/>
+                                    <constraint firstAttribute="trailing" secondItem="wCn-WU-HiI" secondAttribute="trailing" constant="21" id="WQG-2U-sMH"/>
+                                    <constraint firstItem="ppN-um-lbB" firstAttribute="leading" secondItem="UTD-iL-5ip" secondAttribute="leading" constant="21" id="bbx-ln-ZZP"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NkL-jL-JRX">
+                                <rect key="frame" x="524" y="28" width="60" height="47"/>
+                                <state key="normal" image="close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Mym-rn-5QA" kind="unwind" unwindAction="close:" id="Qs0-ob-JT7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="16l-4w-nbI" secondAttribute="bottom" constant="-20" id="19X-rH-jYJ"/>
+                            <constraint firstItem="16l-4w-nbI" firstAttribute="top" secondItem="8Ke-IX-lr4" secondAttribute="bottom" id="2JN-zi-N3E"/>
+                            <constraint firstItem="UTD-iL-5ip" firstAttribute="centerX" secondItem="16l-4w-nbI" secondAttribute="centerX" id="AiE-SK-arR"/>
+                            <constraint firstItem="16l-4w-nbI" firstAttribute="leading" secondItem="DwA-sU-byF" secondAttribute="leading" id="C5Y-om-tle"/>
+                            <constraint firstItem="NkL-jL-JRX" firstAttribute="top" secondItem="8Ke-IX-lr4" secondAttribute="bottom" constant="8" id="GHj-pq-JdR"/>
+                            <constraint firstItem="NkL-jL-JRX" firstAttribute="top" secondItem="8Ke-IX-lr4" secondAttribute="bottom" constant="8" id="MTK-BL-7qH"/>
+                            <constraint firstItem="NkL-jL-JRX" firstAttribute="leading" secondItem="16l-4w-nbI" secondAttribute="trailing" constant="-76" id="QZ5-Jv-j2l"/>
+                            <constraint firstItem="UTD-iL-5ip" firstAttribute="leading" secondItem="DwA-sU-byF" secondAttribute="leading" constant="170" id="RQj-uh-abl"/>
+                            <constraint firstItem="UTD-iL-5ip" firstAttribute="top" secondItem="8Ke-IX-lr4" secondAttribute="bottom" constant="170" id="bBm-Yb-ZIV"/>
+                            <constraint firstItem="6L7-6k-gS6" firstAttribute="top" secondItem="UTD-iL-5ip" secondAttribute="bottom" constant="151" id="iQW-Mj-14q"/>
+                            <constraint firstItem="NkL-jL-JRX" firstAttribute="top" secondItem="8Ke-IX-lr4" secondAttribute="bottom" constant="8" id="p1Z-0r-DUb"/>
+                            <constraint firstAttribute="trailing" secondItem="16l-4w-nbI" secondAttribute="trailing" id="yq9-J0-6Zd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F9T-Ie-851" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Mym-rn-5QA" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="1366"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="up3-5L-b67">
@@ -302,14 +392,19 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jNB-c1-FmF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="265" y="465"/>
+            <point key="canvasLocation" x="145" y="-331"/>
         </scene>
     </scenes>
     <resources>
         <image name="bad" width="78" height="78"/>
         <image name="close" width="60" height="47"/>
+        <image name="email" width="109" height="111"/>
+        <image name="facebook" width="108" height="111"/>
         <image name="good" width="78" height="78"/>
         <image name="great" width="79" height="78"/>
+        <image name="message" width="110" height="110"/>
         <image name="reviewbackground" width="422" height="685"/>
+        <image name="shareBackground" width="449" height="679"/>
+        <image name="twitter" width="110" height="110"/>
     </resources>
 </document>
