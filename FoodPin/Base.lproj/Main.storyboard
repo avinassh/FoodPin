@@ -308,33 +308,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Har-qr-2Cv">
-                                <rect key="frame" x="249" y="28" width="99" height="35"/>
+                                <rect key="frame" x="251" y="28" width="99" height="35"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0m-WI-emp">
-                                <rect key="frame" x="276" y="74" width="46" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0m-WI-emp">
+                                <rect key="frame" x="277" y="74" width="46" height="25"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tW5-w0-rva">
-                                <rect key="frame" x="0.0" y="299" width="606" height="301"/>
+                                <rect key="frame" x="175" y="175" width="250" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="606" id="BgM-4P-DOh"/>
-                                    <constraint firstAttribute="height" constant="301" id="EVf-l6-x0F"/>
+                                    <constraint firstAttribute="width" constant="250" id="27X-zZ-KOy"/>
+                                    <constraint firstAttribute="height" constant="250" id="kkl-yp-g6e"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Har-qr-2Cv" firstAttribute="top" secondItem="aSZ-kY-3oF" secondAttribute="bottom" constant="8" id="KLB-4z-adx"/>
-                            <constraint firstItem="Har-qr-2Cv" firstAttribute="leading" secondItem="cxC-E1-cgS" secondAttribute="leadingMargin" constant="233" id="VVp-VA-ikQ"/>
-                            <constraint firstItem="n0m-WI-emp" firstAttribute="top" secondItem="Har-qr-2Cv" secondAttribute="bottom" constant="11" id="imN-zN-OGz"/>
-                            <constraint firstItem="n0m-WI-emp" firstAttribute="leading" secondItem="cxC-E1-cgS" secondAttribute="leadingMargin" constant="260" id="rbI-ab-0Oq"/>
-                            <constraint firstItem="tW5-w0-rva" firstAttribute="leading" secondItem="cxC-E1-cgS" secondAttribute="leadingMargin" constant="-16" id="yAn-pe-gCL"/>
-                            <constraint firstItem="tW5-w0-rva" firstAttribute="top" secondItem="aSZ-kY-3oF" secondAttribute="bottom" constant="279" id="z4d-WY-G96"/>
+                            <constraint firstAttribute="centerX" secondItem="tW5-w0-rva" secondAttribute="centerX" id="4P8-Ek-hw1"/>
+                            <constraint firstAttribute="centerX" secondItem="Har-qr-2Cv" secondAttribute="centerX" id="5zZ-Io-1CD"/>
+                            <constraint firstItem="Har-qr-2Cv" firstAttribute="top" secondItem="aSZ-kY-3oF" secondAttribute="bottom" constant="8" symbolic="YES" id="9DI-7a-OuH"/>
+                            <constraint firstAttribute="centerX" secondItem="n0m-WI-emp" secondAttribute="centerX" id="aou-Xx-Sm6"/>
+                            <constraint firstAttribute="centerY" secondItem="tW5-w0-rva" secondAttribute="centerY" id="mVm-6T-63l"/>
+                            <constraint firstItem="n0m-WI-emp" firstAttribute="top" secondItem="aSZ-kY-3oF" secondAttribute="bottom" constant="54" id="uMd-Cv-mOq"/>
                         </constraints>
                     </view>
                     <connections>
