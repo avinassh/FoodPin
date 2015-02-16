@@ -42,6 +42,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
             pageContentViewController.heading = pageHeadings[index]
             pageContentViewController.subHeading = pageSubHeadings[index]
             pageContentViewController.imageFile = pageImages[index]
+            pageContentViewController.index = index
             return pageContentViewController
         }
         return nil
