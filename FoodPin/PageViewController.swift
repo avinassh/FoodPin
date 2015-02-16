@@ -1,5 +1,5 @@
 //
-//  PageContentViewController.swift
+//  PageViewController.swift
 //  FoodPin
 //
 //  Created by avi on 16/02/15.
@@ -8,24 +8,12 @@
 
 import UIKit
 
-class PageContentViewController: UIViewController {
+class PageViewController: UIPageViewController {
 
-    @IBOutlet weak var headingLabel: UILabel!
-    @IBOutlet weak var subHeadingLabel: UILabel!
-    @IBOutlet weak var contentImageView: UIImageView!
-    
-    var index: Int!
-    var heading: String!
-    var subHeading: String!
-    var imageFile: String!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        headingLabel.text = heading
-        subHeadingLabel.text = subHeading
-        contentImageView.image = UIImage(named: imageFile)
     }
 
     override func didReceiveMemoryWarning() {
