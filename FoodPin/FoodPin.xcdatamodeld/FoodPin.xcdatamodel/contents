@@ -5,9 +5,10 @@
         <attribute name="isVisited" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNum" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Restaurant" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Restaurant" positionX="-63" positionY="-18" width="128" height="133"/>
     </elements>
 </model>
