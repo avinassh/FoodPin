@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
 
     var restaurantNames = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl",
         "Petite Oyster", "For Kee Restaurant", "Po's Atelier",
@@ -37,6 +37,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     
     var fetchResultsController: NSFetchedResultsController!
     var searchController: UISearchController!
+    var searchResults: [Restaurant] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,9 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         // When using UISearchController, it’s required to define this property 
         // on the view controller in which you want the search to be presented.
         definesPresentationContext = true
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -81,13 +85,22 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
+        
+        // the numbers rows will be different when user is searching
+        // so we return number of search results
+        if searchController.active {
+            return searchResults.count
+        }
         return restaurants.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as CustomTableViewCell
-        let restaurant = restaurants[indexPath.row]
+        
+        // if search is active, then we will display search results as cells.
+        let restaurant = (searchController.active) ? searchResults[indexPath.row] : restaurants[indexPath.row]
+    
         cell.restaurantNameLabel.text = restaurant.name
         // as of now this code displays random images. should be edited to 
         // display proper image for each restaurant
@@ -267,6 +280,24 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         tableView.endUpdates()
     }
     
+    // search bar code
+    // following is the search logic. Its simple, uses filter
+    func filterContentForSearchText(searchText: String!) {
+        searchResults = restaurants.filter() { (restaurant: Restaurant) -> Bool in
+            let nameMatch = restaurant.name.rangeOfString(searchText, options: .CaseInsensitiveSearch)
+            return nameMatch != nil
+        }
+    }
+    
+    // When a user selects the search bar or makes any changes inside it, 
+    // this method will be called. By implementing the method, we can instruct
+    // the search controller to display the search results
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchText = searchController.searchBar.text
+        filterContentForSearchText(searchText)
+        tableView.reloadData()
+    }
+    
     override func prefersStatusBarHidden() -> Bool {
         return false
     }
@@ -281,13 +312,15 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     }
     */
 
-    /*
-    // Override to support conditional editing of the table view.
+
+    // makes cell non-editable when user is searching
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
+        if searchController.active {
+            return false
+        }
         return true
     }
-    */
 
     /*
     // Override to support editing the table view.
