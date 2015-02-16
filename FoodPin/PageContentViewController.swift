@@ -14,7 +14,7 @@ class PageContentViewController: UIViewController {
     @IBOutlet weak var subHeadingLabel: UILabel!
     @IBOutlet weak var contentImageView: UIImageView!
     
-    var index: Int!
+    var index = 0
     var heading: String!
     var subHeading: String!
     var imageFile: String!
