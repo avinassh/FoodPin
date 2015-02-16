@@ -287,6 +287,66 @@
             </objects>
             <point key="canvasLocation" x="-805" y="223"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="G2k-g0-JFV">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="hod-H7-ULr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YrK-4t-yhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1581" y="223"/>
+        </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="P4P-tb-XRz">
+            <objects>
+                <viewController storyboardIdentifier="PageContentViewController" id="5my-qe-f2C" customClass="PageContentViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aSZ-kY-3oF"/>
+                        <viewControllerLayoutGuide type="bottom" id="TGB-N5-d0l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cxC-E1-cgS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Har-qr-2Cv">
+                                <rect key="frame" x="249" y="28" width="99" height="35"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0m-WI-emp">
+                                <rect key="frame" x="276" y="74" width="46" height="25"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tW5-w0-rva">
+                                <rect key="frame" x="0.0" y="299" width="606" height="301"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="606" id="BgM-4P-DOh"/>
+                                    <constraint firstAttribute="height" constant="301" id="EVf-l6-x0F"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Har-qr-2Cv" firstAttribute="top" secondItem="aSZ-kY-3oF" secondAttribute="bottom" constant="8" id="KLB-4z-adx"/>
+                            <constraint firstItem="Har-qr-2Cv" firstAttribute="leading" secondItem="cxC-E1-cgS" secondAttribute="leadingMargin" constant="233" id="VVp-VA-ikQ"/>
+                            <constraint firstItem="n0m-WI-emp" firstAttribute="top" secondItem="Har-qr-2Cv" secondAttribute="bottom" constant="11" id="imN-zN-OGz"/>
+                            <constraint firstItem="n0m-WI-emp" firstAttribute="leading" secondItem="cxC-E1-cgS" secondAttribute="leadingMargin" constant="260" id="rbI-ab-0Oq"/>
+                            <constraint firstItem="tW5-w0-rva" firstAttribute="leading" secondItem="cxC-E1-cgS" secondAttribute="leadingMargin" constant="-16" id="yAn-pe-gCL"/>
+                            <constraint firstItem="tW5-w0-rva" firstAttribute="top" secondItem="aSZ-kY-3oF" secondAttribute="bottom" constant="279" id="z4d-WY-G96"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentImageView" destination="tW5-w0-rva" id="wGc-Tl-bDw"/>
+                        <outlet property="headingLabel" destination="Har-qr-2Cv" id="TtR-mf-Yar"/>
+                        <outlet property="subHeadingLabel" destination="n0m-WI-emp" id="Dw7-Tk-jmL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hpO-M9-azq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1580" y="985"/>
+        </scene>
         <!--Restarurant Detail View Controller-->
         <scene sceneID="eqx-mJ-Ojn">
             <objects>
