@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class RestaurantTableViewController: UITableViewController {
+class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var restaurantNames = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl",
         "Petite Oyster", "For Kee Restaurant", "Po's Atelier",
@@ -34,6 +34,8 @@ class RestaurantTableViewController: UITableViewController {
     var restaurantIsVisited = [Bool](count: 21, repeatedValue: false)
     
     var restaurants: [Restaurant] = []
+    
+    var fetchResultsController: NSFetchedResultsController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -198,16 +200,26 @@ class RestaurantTableViewController: UITableViewController {
         navigationController?.hidesBarsOnSwipe = true
         
         // core data code
-        // we will create a managedObjectContext
+        // create a NSFetchRequest for restaurant entity
+        let fetchRequest = NSFetchRequest(entityName: "Restaurant")
+        // specify how the results want to be sorted
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
         if let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext {
-            // create a fetchrequest for the Restaurant entity
-            let fetchRequest = NSFetchRequest(entityName: "Restaurant")
+            // initiliaze NSFetchResultsController
+            fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+            // and specify its delegate for monitoring data changes
+            fetchResultsController.delegate = self
+            
             var e: NSError?
-            // get ALL the restaruant objects as array
-            restaurants = managedObjectContext.executeFetchRequest(fetchRequest, error: &e) as [Restaurant]
+            // execute the fetch request
+            var result = fetchResultsController.performFetch(&e)
+            // get the restaurant objects, cast them as array of Restaurant
+            restaurants = fetchResultsController.fetchedObjects as [Restaurant]
             
             if e != nil {
-                println("Failed to retrieve record \(e?.localizedDescription)")
+                println("Error while fetching: \(e?.localizedDescription)")
             }
         }
     }
