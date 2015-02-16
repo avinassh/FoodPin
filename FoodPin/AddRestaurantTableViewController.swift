@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddRestaurantTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -17,6 +18,7 @@ class AddRestaurantTableViewController: UITableViewController, UIImagePickerCont
     @IBOutlet weak var yesButton:UIButton!
     @IBOutlet weak var noButton:UIButton!
     
+    var restaurant: Restaurant!
     
     @IBAction func printRestaurants(sender: UIButton) {
         var visited: Bool!
@@ -35,9 +37,24 @@ class AddRestaurantTableViewController: UITableViewController, UIImagePickerCont
         if let name = nameTextField.text {
             if let type = typeTextField.text {
                 if let location = locationTextField.text {
-                    println(name)
-                    println(type)
-                    println(location)
+                    // CoreData Code
+                    // first get a managed object context
+                    if let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext {
+                        // Create a managed object for the Restaurant entity
+                        restaurant = NSEntityDescription.insertNewObjectForEntityForName("Restaurant", inManagedObjectContext: managedObjectContext) as Restaurant
+                        restaurant.name = name
+                        restaurant.type = type
+                        restaurant.location = location
+                        restaurant.isVisited = visited
+                        restaurant.image = UIImagePNGRepresentation(imageView.image)
+                        
+                        var e: NSError?
+                        // save the object in the datastore
+                        if managedObjectContext.save(&e) != true {
+                            println("inster error: \(e?.localizedDescription)")
+                            return
+                        }
+                    }
                 }
             }
         }
