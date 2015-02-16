@@ -224,6 +224,37 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         }
     }
     
+    // following three methods are added cos app wasn't showing newly 
+    // added restaurants for the author of the book. However for my verison of 
+    // swift, xcode and app, these methods seem unnessecary. cos app does show 
+    // new restaurants added.
+    //
+    // before chaging the content by controller
+    // so we will tell tableView that we are gonna change the content
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        tableView.beginUpdates()
+    }
+    
+    // making changes to the table
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        switch type {
+        case .Insert:
+            tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+        case .Delete:
+            tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+        case .Update:
+            tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+        default:
+            tableView.reloadData()
+        }
+        restaurants = controller.fetchedObjects as [Restaurant]
+    }
+    
+    // we have changed the content!
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        tableView.endUpdates()
+    }
+    
     override func prefersStatusBarHidden() -> Bool {
         return false
     }
