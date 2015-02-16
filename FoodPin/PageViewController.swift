@@ -8,12 +8,55 @@
 
 import UIKit
 
-class PageViewController: UIPageViewController {
+class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
+    
+    var pageHeadings = ["Personalize", "Locate", "Discover"]
+    var pageSubHeadings = ["Pin your favourite restaurants \nand create your own food guide",
+        "Search and locate your \nfavourite restaurant on Maps",
+        "Find restaurants pinned by your friends \nand other foodies around the world"]
+    var pageImages = ["personalize", "locate", "discover"]
+    
+    // if user swipes backward, following returns previous view
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+        var index = (viewController as PageContentViewController).index
+        index--
+        return viewControllerAtIndex(index)
+    }
+    
+    // if user swipes forward, following returns next view
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+        var index = (viewController as PageContentViewController).index
+        index++
+        return viewControllerAtIndex(index)
+    }
+
+    
+    func viewControllerAtIndex(index: Int) -> PageContentViewController? {
+        if index == NSNotFound || index < 0 || index >= self.pageHeadings.count {
+            println(index)
+            return nil
+        }
+        
+        // create a new instance of Page Content View Controllor, pass the suitable data
+        if let pageContentViewController = storyboard?.instantiateViewControllerWithIdentifier("PageContentViewController") as? PageContentViewController {
+            pageContentViewController.heading = pageHeadings[index]
+            pageContentViewController.subHeading = pageSubHeadings[index]
+            pageContentViewController.imageFile = pageImages[index]
+            return pageContentViewController
+        }
+        return nil
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // Set the data source to itself
+        dataSource = self
+        // Create the first walkthrough screen
+        if let startingPageViewController = viewControllerAtIndex(0) {
+            setViewControllers([startingPageViewController], direction: .Forward, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
