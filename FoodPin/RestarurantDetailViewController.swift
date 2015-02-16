@@ -61,7 +61,7 @@ class RestarurantDetailViewController: UIViewController, UITableViewDataSource, 
             cell.mapButton.hidden = false
         case 3:
             cell.fieldLabel.text = "Been here"
-            cell.valueLabel.text = restaurant.isVisited ? "Yes, I have been here!" : "No"
+            cell.valueLabel.text = restaurant.isVisited.boolValue ? "Yes, I have been here!" : "No"
         case 4:
             cell.fieldLabel.text = "☎️"
             cell.valueLabel.text = restaurant.phoneNum

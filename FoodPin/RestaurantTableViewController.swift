@@ -93,7 +93,7 @@ class RestaurantTableViewController: UITableViewController {
         cell.restaurantTypeLabel.text = restaurant.type
         cell.restaurantLocationLabel.text = restaurant.location
         //cell.accessoryType = restaurantIsVisited[indexPath.row] ? .Checkmark : .None
-        cell.restaurantVisited.text = restaurant.isVisited ? "♥️" : ""
+        cell.restaurantVisited.text = restaurant.isVisited.boolValue ? "♥️" : ""
         return cell
     }
 
