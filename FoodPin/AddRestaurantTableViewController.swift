@@ -11,6 +11,38 @@ import UIKit
 class AddRestaurantTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameTextField:UITextField!
+    @IBOutlet weak var typeTextField:UITextField!
+    @IBOutlet weak var locationTextField:UITextField!
+    @IBOutlet weak var yesButton:UIButton!
+    @IBOutlet weak var noButton:UIButton!
+    
+    
+    @IBAction func printRestaurants(sender: UIButton) {
+        var visited: Bool!
+        if sender == noButton {
+            yesButton.backgroundColor = UIColor.grayColor()
+            noButton.backgroundColor = UIColor.redColor()
+            visited = true
+        } else {
+            yesButton.backgroundColor = UIColor.redColor()
+            noButton.backgroundColor = UIColor.grayColor()
+            visited = false
+        }
+        
+        // unwrapping varibles
+        // eww this is ugly
+        if let name = nameTextField.text {
+            if let type = typeTextField.text {
+                if let location = locationTextField.text {
+                    println(name)
+                    println(type)
+                    println(location)
+                }
+            }
+        }
+        performSegueWithIdentifier("unwindToHomeScreen", sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
