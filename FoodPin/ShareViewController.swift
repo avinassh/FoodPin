@@ -16,12 +16,12 @@ class ShareViewController: UIViewController {
     @IBOutlet weak var messageShareButton: UIButton!
     @IBOutlet weak var emailShareButton: UIButton!
     
-    var backgroundImage: String!
+    var backgroundImage: NSData!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        backgroundImageView.image = UIImage(named: backgroundImage)
+        backgroundImageView.image = UIImage(data: backgroundImage)
         var blurEffect = UIBlurEffect(style: .Dark)
         var blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds

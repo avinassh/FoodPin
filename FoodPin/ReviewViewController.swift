@@ -13,7 +13,7 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var dialogView: UIView!
     
-    var backgroundImage: String!
+    var backgroundImage: NSData!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class ReviewViewController: UIViewController {
         // Do any additional setup after loading the view.
         // sets the background to the restarunat's image. this data has been 
         // sent by detail view, in prepareSegue
-        backgroundImageView.image = UIImage(named: backgroundImage)
+        backgroundImageView.image = UIImage(data: backgroundImage)
         // following lines add blur effect
         var blurEffect = UIBlurEffect(style: .Dark)
         var blurEffectView = UIVisualEffectView(effect: blurEffect)

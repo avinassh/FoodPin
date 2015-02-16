@@ -84,7 +84,7 @@ class RestaurantTableViewController: UITableViewController {
         // display proper image for each restaurant
         //let randomImageIndex = Int(arc4random_uniform(UInt32(restaurantImages.count)))
         //cell.restaurantThumbnail.image = UIImage(named: restaurantImages[randomImageIndex])
-        cell.restaurantThumbnail.image = UIImage(named: restaurant.image)
+        cell.restaurantThumbnail.image = UIImage(data: restaurant.image)
         
         // following code shows rounded thumbnail
         cell.restaurantThumbnail.layer.cornerRadius = cell.restaurantThumbnail.frame.width / 2
