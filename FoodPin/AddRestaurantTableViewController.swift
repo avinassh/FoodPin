@@ -37,6 +37,15 @@ class AddRestaurantTableViewController: UITableViewController, UIImagePickerCont
         if let name = nameTextField.text {
             if let type = typeTextField.text {
                 if let location = locationTextField.text {
+                    // makes all fields mandatory, if any field is missing, show 
+                    // an alert
+                    if name == "" || location == "" || type == "" {
+                        let emptyDataAlert = UIAlertController(title: "Error", message: "All fields are mandatory bro", preferredStyle: .Alert)
+                        emptyDataAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+                        presentViewController(emptyDataAlert, animated: true, completion: nil)
+                        return
+                    }
+                    
                     // CoreData Code
                     // first get a managed object context
                     if let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext {
