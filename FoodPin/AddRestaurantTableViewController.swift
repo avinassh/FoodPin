@@ -48,6 +48,13 @@ class AddRestaurantTableViewController: UITableViewController, UIImagePickerCont
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // after selecting a photo from image picker, the status bar color changes back to black. 
+    // Mostly iOS 8 bug.
+    // the following should fix it, but its not working
+    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
+    }
+    
     // MARK: - Table view data source
 
     // we don't need following methods, since we are using static tables
