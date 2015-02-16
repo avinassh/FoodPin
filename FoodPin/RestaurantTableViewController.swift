@@ -36,6 +36,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     var restaurants: [Restaurant] = []
     
     var fetchResultsController: NSFetchedResultsController!
+    var searchController: UISearchController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,17 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         
         //tableView.estimatedRowHeight = 80.0
         //tableView.rowHeight = UITableViewAutomaticDimension
+        
+        // search bar code
+        // passing nil says that results will displayed on same view, not on
+        // seperate view
+        searchController = UISearchController(searchResultsController: nil)
+        // does what it says, fits the size into the view, within bounds
+        searchController.searchBar.sizeToFit()
+        tableView.tableHeaderView = searchController.searchBar
+        // When using UISearchController, it’s required to define this property 
+        // on the view controller in which you want the search to be presented.
+        definesPresentationContext = true
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
