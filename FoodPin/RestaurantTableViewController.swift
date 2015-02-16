@@ -40,12 +40,6 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // not sure if I should be initiliazting restaurant data here :-/
-//        for i in 0..<restaurantNames.count {
-//            let restaurant = Restaurant(name: restaurantNames[i], type: restaurantTypes[i], location: restaurantLocations[i], image: restaurantImages[i], isVisited: restaurantIsVisited[i], phoneNum: "+91-123-000-\(i)")
-//            restaurants.append(restaurant)
-//        }
-        
         // Empty back button (in showDetail scene) or any next scene
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         
