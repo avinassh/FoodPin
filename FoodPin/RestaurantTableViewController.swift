@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RestaurantTableViewController: UITableViewController {
 
@@ -195,6 +196,20 @@ class RestaurantTableViewController: UITableViewController {
         // once the view is loaded (or loaded everytime, unlike viewDidLoad called
         // only first time view is loaded) hide the status bar when user swipes up
         navigationController?.hidesBarsOnSwipe = true
+        
+        // core data code
+        // we will create a managedObjectContext
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext {
+            // create a fetchrequest for the Restaurant entity
+            let fetchRequest = NSFetchRequest(entityName: "Restaurant")
+            var e: NSError?
+            // get ALL the restaruant objects as array
+            restaurants = managedObjectContext.executeFetchRequest(fetchRequest, error: &e) as [Restaurant]
+            
+            if e != nil {
+                println("Failed to retrieve record \(e?.localizedDescription)")
+            }
+        }
     }
     
     override func prefersStatusBarHidden() -> Bool {
