@@ -181,6 +181,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="nWg-ln-SCc" id="hQA-FN-wjr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4PV-Ho-vu7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="JY5-AP-BEA" userLabel="Exit" sceneMemberID="exit"/>

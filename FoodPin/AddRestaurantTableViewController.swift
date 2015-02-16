@@ -8,8 +8,10 @@
 
 import UIKit
 
-class AddRestaurantTableViewController: UITableViewController {
+class AddRestaurantTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +31,7 @@ class AddRestaurantTableViewController: UITableViewController {
         if indexPath.row == 0 {
             if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
                 let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
                 imagePicker.allowsEditing = false
                 imagePicker.sourceType = .PhotoLibrary
                 self.presentViewController(imagePicker, animated: true, completion: nil)
@@ -36,7 +39,15 @@ class AddRestaurantTableViewController: UITableViewController {
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        imageView.clipsToBounds = true
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     // MARK: - Table view data source
 
     // we don't need following methods, since we are using static tables
