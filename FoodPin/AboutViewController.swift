@@ -7,9 +7,38 @@
 //
 
 import UIKit
+import MessageUI
 
-class AboutViewController: UIViewController {
+class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate, UINavigationControllerDelegate {
 
+    @IBAction func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            var composer = MFMailComposeViewController()
+            composer.mailComposeDelegate = self
+            composer.setToRecipients(["tim@apple.com", "ive@apple.com"])
+            composer.navigationBar.tintColor = UIColor.whiteColor()
+            presentViewController(composer, animated: true) {
+                UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
+            }
+        }
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+        switch result.value {
+        case MFMailComposeResultCancelled.value:
+            println("Mail cancelled")
+        case MFMailComposeResultFailed.value:
+            println("Mail failed")
+        case MFMailComposeResultSaved.value:
+            println("Mail saved")
+        case MFMailComposeResultSent.value:
+            println("Mail sent!!")
+        default:
+            break
+        }
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
