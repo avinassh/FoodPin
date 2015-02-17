@@ -695,7 +695,46 @@
                     <view key="view" contentMode="scaleToFill" id="88Q-tj-JvW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Got Questions?  You are just one tap away" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF2-nL-IaB">
+                                <rect key="frame" x="183" y="315" width="234" height="55"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wge-IW-uFb">
+                                <rect key="frame" x="256" y="378" width="90" height="37"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Contact Us">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aboutus" translatesAutoresizingMaskIntoConstraints="NO" id="y9f-ys-b9C">
+                                <rect key="frame" x="188" y="72" width="224" height="223"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Si-N0-7rq">
+                                <rect key="frame" x="228" y="423" width="144" height="37"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Visit Our Website">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="yF2-nL-IaB" secondAttribute="centerX" id="5Vh-4T-Em8"/>
+                            <constraint firstAttribute="centerX" secondItem="5Si-N0-7rq" secondAttribute="centerX" id="Y2v-yM-VsY"/>
+                            <constraint firstAttribute="centerX" secondItem="Wge-IW-uFb" secondAttribute="centerX" constant="-1" id="aAY-s2-I2k"/>
+                            <constraint firstItem="y9f-ys-b9C" firstAttribute="top" secondItem="yYu-RS-dIt" secondAttribute="bottom" constant="8" id="aJp-If-kwR"/>
+                            <constraint firstAttribute="centerX" secondItem="y9f-ys-b9C" secondAttribute="centerX" id="cNJ-Dz-EF1"/>
+                            <constraint firstItem="yF2-nL-IaB" firstAttribute="top" secondItem="yYu-RS-dIt" secondAttribute="bottom" constant="251" id="mUv-Da-B36"/>
+                            <constraint firstItem="5Si-N0-7rq" firstAttribute="top" secondItem="yYu-RS-dIt" secondAttribute="bottom" constant="359" id="o1v-Md-3X1"/>
+                            <constraint firstItem="Wge-IW-uFb" firstAttribute="top" secondItem="yYu-RS-dIt" secondAttribute="bottom" constant="314" id="uub-9Q-7R9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6X0-v6-po7"/>
                 </viewController>
@@ -874,6 +913,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="aboutus" width="224" height="223"/>
         <image name="bad" width="78" height="78"/>
         <image name="camera" width="665" height="495"/>
         <image name="close" width="60" height="47"/>
