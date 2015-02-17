@@ -220,6 +220,8 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             if let indexPath = tableView.indexPathForSelectedRow() {
                 let destinationController = segue.destinationViewController as RestarurantDetailViewController
                 destinationController.restaurant = restaurants[indexPath.row]
+                // hide the tab bar
+                destinationController.hidesBottomBarWhenPushed = true
             }
         }
     }
