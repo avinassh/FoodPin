@@ -758,7 +758,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hd1-FZ-a0G">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
@@ -770,6 +770,9 @@
                             <constraint firstItem="hd1-FZ-a0G" firstAttribute="leading" secondItem="kaS-3M-5WJ" secondAttribute="leading" id="ddM-ij-hGe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="hd1-FZ-a0G" id="mh3-6I-L7u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8iv-2h-mzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
