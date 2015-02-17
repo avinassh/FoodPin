@@ -43,6 +43,9 @@ class PageContentViewController: UIViewController {
     }
     
     @IBAction func close() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setBool(true, forKey: "hasViewedWalkthrough")
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
 

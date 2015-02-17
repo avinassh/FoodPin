@@ -64,10 +64,15 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         
         // to display walkthrough scenes, using PageViewController
         // so following page view will displayed at the start of the app
-        if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as? PageViewController {
-            presentViewController(pageViewController, animated: true, completion: nil)
-        }
+        // now we will display walk through only once
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let hasViewedWalkthrough = defaults.boolForKey("hasViewedWalkthrough")
         
+        if !hasViewedWalkthrough {
+            if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as? PageViewController {
+                presentViewController(pageViewController, animated: true, completion: nil)
+            }
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
