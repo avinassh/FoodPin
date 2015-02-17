@@ -343,6 +343,9 @@
                                 <state key="normal" title="Get Started">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="close" destination="5my-qe-f2C" eventType="touchUpInside" id="rbg-NU-xyP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuH-rD-mci">
                                 <rect key="frame" x="285" y="107" width="30" height="30"/>
@@ -352,6 +355,9 @@
                                 <state key="normal" title="Button" image="next">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextScreen" destination="5my-qe-f2C" eventType="touchUpInside" id="XQR-08-n73"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

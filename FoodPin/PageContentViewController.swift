@@ -42,7 +42,16 @@ class PageContentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func close() {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
+    @IBAction func nextScreen() {
+        let pageViewController = self.parentViewController as PageViewController
+        pageViewController.forward(index)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
