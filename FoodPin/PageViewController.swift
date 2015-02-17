@@ -33,7 +33,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     
     func viewControllerAtIndex(index: Int) -> PageContentViewController? {
         if index == NSNotFound || index < 0 || index >= self.pageHeadings.count {
-            println(index)
             return nil
         }
         
@@ -47,7 +46,20 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         }
         return nil
     }
-
+    
+    // for presentation dots
+    // following code returns total number of pages
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return pageHeadings.count
+    }
+    // returns current index
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        if let pageContentViewController = storyboard?.instantiateViewControllerWithIdentifier("PageContentViewController") as? PageContentViewController {
+            return pageContentViewController.index
+        }
+        return 0
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
