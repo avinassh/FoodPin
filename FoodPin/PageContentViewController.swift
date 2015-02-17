@@ -13,10 +13,8 @@ class PageContentViewController: UIViewController {
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var subHeadingLabel: UILabel!
     @IBOutlet weak var contentImageView: UIImageView!
-    
-    @IBOutlet weak var indexOne: UIButton!
-    @IBOutlet weak var indexTwo: UIButton!
-    @IBOutlet weak var indexThree: UIButton!
+        
+    @IBOutlet weak var pageControl: UIPageControl!
     
     var index = 0
     var heading: String!
@@ -30,24 +28,7 @@ class PageContentViewController: UIViewController {
         headingLabel.text = heading
         subHeadingLabel.text = subHeading
         contentImageView.image = UIImage(named: imageFile)
-        
-        // code for page indicator
-        switch index {
-        case 0:
-            indexOne.backgroundColor = UIColor.redColor()
-            indexTwo.backgroundColor = UIColor.grayColor()
-            indexThree.backgroundColor = UIColor.grayColor()
-        case 1:
-            indexOne.backgroundColor = UIColor.grayColor()
-            indexTwo.backgroundColor = UIColor.redColor()
-            indexThree.backgroundColor = UIColor.grayColor()
-        case 2:
-            indexOne.backgroundColor = UIColor.grayColor()
-            indexTwo.backgroundColor = UIColor.grayColor()
-            indexThree.backgroundColor = UIColor.redColor()
-        default:
-            break
-        }
+        pageControl.currentPage = index
     }
 
     override func didReceiveMemoryWarning() {

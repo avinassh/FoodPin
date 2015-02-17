@@ -326,55 +326,20 @@
                                     <constraint firstAttribute="height" constant="250" id="kkl-yp-g6e"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEM-gb-lkU">
-                                <rect key="frame" x="251" y="107" width="30" height="33"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="1">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="printRestaurants:" destination="Tp5-vz-peg" eventType="touchUpInside" id="HIF-ce-xMG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtf-us-6za">
-                                <rect key="frame" x="285" y="107" width="30" height="33"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="2">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="printRestaurants:" destination="Tp5-vz-peg" eventType="touchUpInside" id="kyc-vN-rHR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6up-IY-jj0">
-                                <rect key="frame" x="320" y="107" width="30" height="33"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="3">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="printRestaurants:" destination="Tp5-vz-peg" eventType="touchUpInside" id="42I-Dx-xDe"/>
-                                </connections>
-                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-Xq-ezG">
+                                <rect key="frame" x="281" y="0.0" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lEM-gb-lkU" firstAttribute="top" secondItem="n0m-WI-emp" secondAttribute="bottom" constant="8" id="1j7-k2-iYv"/>
                             <constraint firstAttribute="centerX" secondItem="tW5-w0-rva" secondAttribute="centerX" id="4P8-Ek-hw1"/>
-                            <constraint firstItem="6up-IY-jj0" firstAttribute="leading" secondItem="cxC-E1-cgS" secondAttribute="leadingMargin" constant="304" id="4iD-aZ-u1P"/>
                             <constraint firstAttribute="centerX" secondItem="Har-qr-2Cv" secondAttribute="centerX" id="5zZ-Io-1CD"/>
                             <constraint firstItem="Har-qr-2Cv" firstAttribute="top" secondItem="aSZ-kY-3oF" secondAttribute="bottom" constant="8" symbolic="YES" id="9DI-7a-OuH"/>
-                            <constraint firstItem="rtf-us-6za" firstAttribute="leading" secondItem="cxC-E1-cgS" secondAttribute="leadingMargin" constant="269" id="IYh-DL-rTz"/>
-                            <constraint firstItem="rtf-us-6za" firstAttribute="top" secondItem="n0m-WI-emp" secondAttribute="bottom" constant="8" id="L7o-7g-ZWB"/>
-                            <constraint firstItem="lEM-gb-lkU" firstAttribute="leading" secondItem="cxC-E1-cgS" secondAttribute="leadingMargin" constant="235" id="VMi-X8-gad"/>
+                            <constraint firstAttribute="centerX" secondItem="dk0-Xq-ezG" secondAttribute="centerX" id="FBh-AS-YwV"/>
+                            <constraint firstItem="dk0-Xq-ezG" firstAttribute="top" secondItem="cxC-E1-cgS" secondAttribute="top" id="ZDi-Xl-eT5"/>
                             <constraint firstAttribute="centerX" secondItem="n0m-WI-emp" secondAttribute="centerX" id="aou-Xx-Sm6"/>
-                            <constraint firstItem="6up-IY-jj0" firstAttribute="top" secondItem="n0m-WI-emp" secondAttribute="bottom" constant="8" id="h2f-I6-xi2"/>
                             <constraint firstAttribute="centerY" secondItem="tW5-w0-rva" secondAttribute="centerY" id="mVm-6T-63l"/>
                             <constraint firstItem="n0m-WI-emp" firstAttribute="top" secondItem="aSZ-kY-3oF" secondAttribute="bottom" constant="54" id="uMd-Cv-mOq"/>
                         </constraints>
@@ -382,15 +347,13 @@
                     <connections>
                         <outlet property="contentImageView" destination="tW5-w0-rva" id="wGc-Tl-bDw"/>
                         <outlet property="headingLabel" destination="Har-qr-2Cv" id="TtR-mf-Yar"/>
-                        <outlet property="indexOne" destination="lEM-gb-lkU" id="gUC-Ck-dub"/>
-                        <outlet property="indexThree" destination="6up-IY-jj0" id="LGJ-rr-hla"/>
-                        <outlet property="indexTwo" destination="rtf-us-6za" id="vn9-wq-iw3"/>
+                        <outlet property="pageControl" destination="dk0-Xq-ezG" id="3a2-0c-FhM"/>
                         <outlet property="subHeadingLabel" destination="n0m-WI-emp" id="Dw7-Tk-jmL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpO-M9-azq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1580" y="985"/>
+            <point key="canvasLocation" x="-1596" y="982"/>
         </scene>
         <!--Restarurant Detail View Controller-->
         <scene sceneID="eqx-mJ-Ojn">
