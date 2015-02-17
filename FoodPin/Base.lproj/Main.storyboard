@@ -331,22 +331,51 @@
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yty-nd-dgj">
+                                <rect key="frame" x="246" y="107" width="109" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="109" id="9Xx-2J-SLi"/>
+                                    <constraint firstAttribute="height" constant="30" id="euE-Nw-8zy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuH-rD-mci">
+                                <rect key="frame" x="285" y="107" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="CFd-jh-zNm"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="next">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="yty-nd-dgj" firstAttribute="top" secondItem="n0m-WI-emp" secondAttribute="bottom" constant="8" symbolic="YES" id="0vZ-8C-ntc"/>
                             <constraint firstAttribute="centerX" secondItem="tW5-w0-rva" secondAttribute="centerX" id="4P8-Ek-hw1"/>
                             <constraint firstAttribute="centerX" secondItem="Har-qr-2Cv" secondAttribute="centerX" id="5zZ-Io-1CD"/>
                             <constraint firstItem="Har-qr-2Cv" firstAttribute="top" secondItem="aSZ-kY-3oF" secondAttribute="bottom" constant="8" symbolic="YES" id="9DI-7a-OuH"/>
                             <constraint firstAttribute="centerX" secondItem="dk0-Xq-ezG" secondAttribute="centerX" id="FBh-AS-YwV"/>
+                            <constraint firstAttribute="centerX" secondItem="AuH-rD-mci" secondAttribute="centerX" id="SUn-X9-3Jh"/>
+                            <constraint firstAttribute="centerX" secondItem="yty-nd-dgj" secondAttribute="centerX" id="Tg3-yg-2Cm"/>
                             <constraint firstItem="dk0-Xq-ezG" firstAttribute="top" secondItem="cxC-E1-cgS" secondAttribute="top" id="ZDi-Xl-eT5"/>
                             <constraint firstAttribute="centerX" secondItem="n0m-WI-emp" secondAttribute="centerX" id="aou-Xx-Sm6"/>
+                            <constraint firstItem="AuH-rD-mci" firstAttribute="bottom" secondItem="yty-nd-dgj" secondAttribute="bottom" id="djQ-ik-O0F"/>
+                            <constraint firstItem="AuH-rD-mci" firstAttribute="top" secondItem="yty-nd-dgj" secondAttribute="top" id="l8s-lq-KjA"/>
                             <constraint firstAttribute="centerY" secondItem="tW5-w0-rva" secondAttribute="centerY" id="mVm-6T-63l"/>
                             <constraint firstItem="n0m-WI-emp" firstAttribute="top" secondItem="aSZ-kY-3oF" secondAttribute="bottom" constant="54" id="uMd-Cv-mOq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="contentImageView" destination="tW5-w0-rva" id="wGc-Tl-bDw"/>
+                        <outlet property="getStartedButton" destination="yty-nd-dgj" id="CMS-q8-jOV"/>
                         <outlet property="headingLabel" destination="Har-qr-2Cv" id="TtR-mf-Yar"/>
+                        <outlet property="nextButton" destination="AuH-rD-mci" id="c2g-dv-eke"/>
                         <outlet property="pageControl" destination="dk0-Xq-ezG" id="3a2-0c-FhM"/>
                         <outlet property="subHeadingLabel" destination="n0m-WI-emp" id="Dw7-Tk-jmL"/>
                     </connections>
@@ -744,6 +773,7 @@
         <image name="good" width="78" height="78"/>
         <image name="great" width="79" height="78"/>
         <image name="message" width="110" height="110"/>
+        <image name="next" width="60" height="54"/>
         <image name="reviewbackground" width="422" height="685"/>
         <image name="shareBackground" width="449" height="679"/>
         <image name="twitter" width="110" height="110"/>

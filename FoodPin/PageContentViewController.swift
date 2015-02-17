@@ -15,6 +15,8 @@ class PageContentViewController: UIViewController {
     @IBOutlet weak var contentImageView: UIImageView!
         
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var getStartedButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     
     var index = 0
     var heading: String!
@@ -29,6 +31,10 @@ class PageContentViewController: UIViewController {
         subHeadingLabel.text = subHeading
         contentImageView.image = UIImage(named: imageFile)
         pageControl.currentPage = index
+        
+        // hide getstarted and next buttons accordingly
+        getStartedButton.hidden = (index == 2) ? false : true
+        nextButton.hidden = (index == 2) ? true : false
     }
 
     override func didReceiveMemoryWarning() {
