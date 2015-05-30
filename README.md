@@ -4,6 +4,7 @@ Restaurant ratings app.
 
 # To do
 - Fix bugs! - Doesn't segue back while adding a new restaurant.
+- Remove all the hideous Interstellar images used.
 - Consistent UI
 - Code cleanup
 
